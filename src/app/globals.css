@@ -2,26 +2,150 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.card-bg{
+    position: relative;
+    overflow: auto
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.card-bg::before{
+    content: "";
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    backdrop-filter: blur(20px);
+    opacity: .3;
+    z-index: -1;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.animSelect-text,
+.anim-text{
+    transition: .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    pointer-events: none;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.animSelect:focus ~ .animSelect-text{
+    transform: translate(-5px, -31px);
+    color: #f9fafb;
+    font-size: 0.875rem;
+}
+
+.animSelect:focus{
+    color: #6b7280;
+    transition: 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.animSelect.input:focus ~ .animSelect-text.input,
+    .animSelect.input:valid ~ .animSelect-text.input{
+    transform: translate(-5px, -31px);
+    color: #f9fafb;
+    font-size: 0.875rem;
+}
+
+.anim-text.float{
+    transform: translate(-5px, -31px);
+    color: #f9fafb;
+    font-size: 0.875rem;
+}
+
+/* Convert Button */
+.convert-button{
+    position: relative;
+    overflow: auto;
+    transition: .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.convert-button::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(212, 209, 15);
+    opacity: .5;
+    z-index: -1;
+    transition: .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+
+.convert-button.reset::before{
+    background: rgb(167, 10, 10);
+}
+
+.convert-button.swap::before{
+    background: rgb(12, 131, 179);
+}
+
+.convert-button:hover::before{
+    opacity: .7;
+}
+
+.convert-button:hover{
+    scale: 1.05;
+}
+
+.convert-button:active{
+    scale: .95;
+}
+
+/* Footer */
+.footer{
+    position: relative;
+}
+
+.footer::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    opacity: .3;
+}
+
+.nav{
+    position: relative;
+    overflow: auto;
+    z-index: 10;
+}
+
+.nav::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    opacity: .3;
+    z-index: -1;
+}
+
+
+
+/* Main Background */
+.main-bg {
+    background: linear-gradient(45deg,#172554, #db2777);
+    animation: bgAnim 10s ease infinite;
+    background-size: 400% 400%;
+}
+
+@-webkit-keyframes bgAnim {
+    0%{background-position:51% 0%}
+    50%{background-position:50% 100%}
+    100%{background-position:51% 0%}
+}
+@-moz-keyframes bgAnim {
+    0%{background-position:51% 0%}
+    50%{background-position:50% 100%}
+    100%{background-position:51% 0%}
+}
+@keyframes bgAnim {
+    0%{background-position:51% 0%}
+    50%{background-position:50% 100%}
+    100%{background-position:51% 0%}
 }
