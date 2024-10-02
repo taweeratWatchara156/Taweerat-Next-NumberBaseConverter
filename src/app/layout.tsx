@@ -30,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`main-bg w-screen h-screen  ${inter.className} overflow-x-hidden`}> 
+      <body className={`main-bg w-dvw h-dvh  ${inter.className} overflow-x-hidden inset-0`}> 
         <Navbar/>
         {children}
         <Footer/>
