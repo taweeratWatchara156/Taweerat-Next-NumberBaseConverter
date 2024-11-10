@@ -1,3 +1,7 @@
+"""
+  It's just number base converter and absolutely its not finish yet i just 12th grade student. next student will come soon!! -- POOM.
+"""
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
